@@ -25,3 +25,19 @@ Deserializable:
 ObejectInputStream ois = new ObjectInputStream(new FileInputStream(file));
 Student s = (Student)ois.readObject();
 System.out.println(s);
+
+
+transient: if a field in a class is transient then it cannot be serializabled.
+ public Class Student{
+ private transient int age;
+ private String name;
+ //
+ ..
+ }
+ then the age field cannot be serializied. But the field can also do serialization and deserialization by itself.
+ 
+ 
+ Deserializable and Construstor:
+ 
+ When do deseriazable to object of child class, if its super class does not implements Serializable, the superclass's constructor will be invoked. If its super class implements Serializable, we cannot see its constructor is invoked.
+
