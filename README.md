@@ -16,14 +16,20 @@ Serializable: an object can be converted into binary stream and transfered over 
   }
   
 String file = "xx/xx/xx";
+
 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
+
 Student s = new Student();
+
 oos.writeObject();
 
 
 Deserializable:
+
 ObejectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+
 Student s = (Student)ois.readObject();
+
 System.out.println(s);
 
 
